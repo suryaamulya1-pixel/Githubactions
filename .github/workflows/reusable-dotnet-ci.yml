@@ -1,0 +1,33 @@
+name: Reusable .NET CI Workflow
+
+on:
+  workflow_call:
+    inputs:
+      dotnet-version:
+        required: true
+        type: string
+      project-path:
+        required: true
+        type: string
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout code
+      uses: actions/checkout@v4
+
+    - name: Setup .NET
+      uses: actions/setup-dotnet@v4
+      with:
+        dotnet-version: ${{ inputs.dotnet-version }}
+
+    - name: Restore dependencies
+      run: dotnet restore ${{ inputs.project-path }}
+
+    - name: Build
+      run: dotnet build ${{ inputs.project-path }} --no-restore
+
+    - name: Run tests
+      run: dotnet test ${{ inputs.project-path }} --no-build --verbosity normal
