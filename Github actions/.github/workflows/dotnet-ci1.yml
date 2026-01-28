@@ -1,0 +1,15 @@
+name: .NET CI (Dev Branch)
+
+on:
+  push:
+    branches: [ dev ]
+  pull_request:
+    branches: [ dev ]
+
+jobs:
+  call-reusable-workflow:
+    uses: ./.github/workflows/reusabledotnetci.yml
+    with:
+      dotnet_version: '8.0.x'
+      project_path: 'SampleApi/SampleApi.csproj'
+      build_configuration: 'Release'
