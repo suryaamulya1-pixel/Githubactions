@@ -1,4 +1,4 @@
-name: Dev CI Pipeline
+name: CI - Dev Branch
 
 on:
   push:
@@ -9,8 +9,7 @@ on:
       - dev
 
 jobs:
-  dev-ci:
+  ci:
     uses: ./.github/workflows/reusable-dotnet-ci.yml
     with:
-      dotnet-version: "7.0.x"
-      image-name: "sampleapi:dev"
+      dotnet-version: "8.0.x"
