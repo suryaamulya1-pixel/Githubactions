@@ -1,13 +1,16 @@
-name: CI Pipeline - Dev Branch
+name: Dev CI Pipeline
 
 on:
+  push:
+    branches:
+      - dev
   pull_request:
     branches:
       - dev
 
 jobs:
-  dotnet-ci:
+  dev-ci:
     uses: ./.github/workflows/reusable-dotnet-ci.yml
     with:
-      dotnet-version: '7.0.x'
-      project-path: 'src/SampleApi/SampleApi.csproj'
+      dotnet-version: "7.0.x"
+      image-name: "sampleapi:dev"
