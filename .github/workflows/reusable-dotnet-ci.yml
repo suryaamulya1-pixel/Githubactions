@@ -29,5 +29,5 @@ jobs:
       - name: Test
         run: dotnet test || echo "No tests found"
 
-      - name: docker Build
-        run: docker build -t samplewebapi:ci -f ./docker/dockerfile .
+      - name: Docker Build
+        run: docker build -t samplewebapi:ci -f docker/dockerfile .
