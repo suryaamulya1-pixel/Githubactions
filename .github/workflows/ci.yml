@@ -13,3 +13,4 @@ jobs:
     uses: ./.github/workflows/reusable-dotnet-ci.yml
     with:
       dotnet-version: "8.0.x"
+      sonar-project-key: "Githubactions"
