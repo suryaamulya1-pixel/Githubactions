@@ -1,5 +1,5 @@
 function greet() {
-    console.log("Hello from Main Branch");
+    console.log("Hello from Main & Feature Branch");
 }
 
 greet();
