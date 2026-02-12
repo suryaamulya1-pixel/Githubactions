@@ -1,10 +1,5 @@
 function greet() {
-    console.log("Hello World");
-}
-
-function log() {
-    console.log("Logging enabled");
+    console.log("Hello from Main Branch");
 }
 
 greet();
-log();
